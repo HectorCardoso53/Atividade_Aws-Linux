@@ -66,6 +66,19 @@ AWS: Geração de chave pública para acesso ao ambiente:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/72a417f3-00a8-4efd-8d43-aaeb9983804f)
 
+# AWS : Liberar as portas de comunicação para acesso público
+1.	Na página do serviço EC2, no menu lateral esquerdo, em Rede e Segurança, clique em Security groups;
+2.	Selecione o grupo de segurança que foi criado com a instância EC2;
+3.	Clique em Regras de entrada, na parte inferior, e depois, do lado direito da tela, em Editar regras de entrada;
+4.	Por padrão, já temos uma regra de entrada, do Tipo SSH, no Intervalo de portas 22, Protocolo TCP. Essa regra será mantida;
+5.	Clique em Adicionar regras. Agora iremos acrescentar a liberação de outras portas, além da 22 que já consta, conforme indicado na tabela abaixo:
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e7214457-f7f4-4515-abae-a58acab6f203)
+
+6.	Clique em Salvar regras.
+
+
+
 
 
 
