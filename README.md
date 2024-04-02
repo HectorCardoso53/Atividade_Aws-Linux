@@ -1,7 +1,7 @@
 # Atividade_Aws-Linux
 ## Execução da atividade
 ### Requisitos no AWS:
-AWS: Geração de chave pública para acesso ao ambiente:
+### Gerar chave pública para acesso ao ambiente:
 
 1.No console AWS, vá para o Painel EC2:
 
@@ -9,7 +9,7 @@ AWS: Geração de chave pública para acesso ao ambiente:
 
 3.Na próxima tela, no lado superior direito, clique em Criar par de chaves;
 
-4.A tela de criação será aberta e nela você poderá escolher um nome para o par de chaves. No meu caso, criei a chave "HectorSSH"
+4.A tela de criação será aberta e nela você poderá escolher um nome para o par de chaves. No meu caso, criei a chave "HectorSSH.pem"
 
 5.Mantenha as configurações restantes e na opção Formato de arquivo de chave privada, selecione o formato. pem, necessário para acessar a instância via Linux, como iremos fazer;
 
@@ -25,7 +25,7 @@ AWS: Geração de chave pública para acesso ao ambiente:
 
 2.Na próxima tela, no lado superior direito, clique em Executar instância;
 
-3.Agora é possível criar um nome para a instância e criar tags. Nome, CostCenter e Project, de acordo com as recomendações dos instrutores.
+3.Agora é possível criar um nome para a instância e criar tags. Nome: PB UFOPA, CostCenter: C092000024 e Project: PB UFOPA, de acordo com as recomendações dos professores.
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/740bd73e-62d4-45c7-9afc-416d3b1d53c3)
 
@@ -67,7 +67,7 @@ AWS: Geração de chave pública para acesso ao ambiente:
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/72a417f3-00a8-4efd-8d43-aaeb9983804f)
 
 ### AWS : Liberar as portas de comunicação para acesso público
-1.	Na página do serviço EC2, no menu lateral esquerdo, em Rede e Segurança, clique em Security groups;
+1.	Na página do serviço EC2, no menu lateral esquerdo, em Rede e Segurança, clique em Grupo de Segurança;
 2.	Selecione o grupo de segurança que foi criado com a instância EC2;
 3.	Clique em Regras de entrada, na parte inferior, e depois, do lado direito da tela, em Editar regras de entrada;
 4.	Por padrão, já temos uma regra de entrada, do Tipo SSH, no Intervalo de portas 22, Protocolo TCP. Essa regra será mantida;
