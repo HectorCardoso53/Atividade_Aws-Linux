@@ -171,6 +171,56 @@ O script também deve gerar 2 arquivos de saída: um para o serviço online e ou
 1.	Execute o comando nano service_status.sh para criar e abrir o arquivo do script. É importante criar o script dentro do diretório EFS. Aqui vamos salvá-lo no caminho /mnt/efs/Hector;
 2.	Dentro do arquivo, digite o script desejado. O script criado para essa atividade pode ser observado na imagem a seguir:
 
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/b97416c0-6e00-40a7-96c0-63c4e4f963e6)
+
+3.	Note que, no exemplo acima, dentro do esquema "if/else", já indicamos que a operação deve criar, no caminho do diretório indicado, e enviar dois arquivos em formato .txt com os resultados da verificação. Sendo um arquivo para o resultado online e outro para o resultado offline;
+4.	Salve o arquivo do script;
+5.	Para tornar o arquivo do script executável digite o comando  nesse caso, sudo chmod +x service_status.sh;
+6.	Estando no diretório onde o script foi criado e ativado, execute o comando ./service_status.sh para executá-lo. Caso esteja funcionando corretamente e o serviço esteja online, o script vai criar o documento .txt que guarda as informações da validação online;
+   
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e74d5954-22da-435a-b616-1e792183fbcb)
+
+7.	Esse documento pode ser lido com o comando cat + nome do documento: cat httpd-online.txt. É possível verificar o funcionamento do script na imagem abaixo:
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/8e567e59-25c9-4cb5-a388-186e9178cab8)
+
+8.	Note que o documento informa a data e a hora em que a verificação foi feita, assim como o nome do serviço verificado e uma mensagem indicando que o mesmo está online.
+
+### Linux : Preparando a execução automatizada do script a cada 5 minutos
+
+Para o agendamento da execução do script vamos utilizar o comando crontab. Normalmente o crontab abre um arquivo com o programa vi de edição de texto. Inciando  a  configuração:
+
+1.	Digite o comando EDITOR=nano crontab -e, para que o nano abra o arquivo crontab;
+2.	Dentro do arquivo digite a linha */5 * * * * /[caminho de onde está o script/nome do script]. Em nosso caso, ficou dessa forma: */5 * * * * /mnt/efs/Hector/service_status.sh
+3.	Salve o arquivo e feche o editor.
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/1fcfa23a-f144-495c-a8b9-61fd886e3c30)
+
+4.	Para verificar se a automatização está funcionando, é preciso abrir os arquivos .txt que foram programados para serem criados e guardar as informações da verificação do serviço online e offline. Como a automatização faz com que a verificação programada pelo script ocorra a cada 5 minutos, dê algum tempo para que o arquivo .txt seja atualizado algumas vezes;
+5.	Na imagem abaixo temos a demonstração do arquivo httpd-online.txt exibindo as informações da validação online após o crontab realizar a automatização algumas vezes:
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/4eac8d15-a8df-413b-97d3-a4c65f649813)
+
+6.	Para fazermos a confirmação de que o script realiza a verificação do serviço offline é preciso interromper o Apache com o comando sudo systemctl stop httpd. Dessa forma, basta aguardar alguns minutos para que o crontap continue a executar o script a cada 5 minutos e poderemos ver a criação do arquivo httpd-offline.txt, que exibe os momentos em que o status do serviço estava offline, conforme imagem abaixo:
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/1e4e4aad-a898-4798-b7dd-e390908ad433)
+
+7.	Ainda, é possível verificarmos que os arquivos .txt foram criados dentro do diretório indicado no script:
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/45a1528e-5738-4673-8fc0-c1d426d6496e)
+
+E no final encerrar instância
+
+## Referências para a realização da atividade 
+
+Documentação oficial Amazon AWS: https://docs.aws.amazon.com/pt_br/
+Guia Linux Unirio: https://guialinux.uniriotec.br/
+Esta documentação foi formulada por Sérgio Luiz Ferreira de Freitas a partir da atividade realizada e proposta no contexto do Programa de Bolsas e Estágio AWS e DecSecOps na Compass UOL no primeiro semestre de 2024.
+Ao longo da atividade deixamos alguns endereços IP explícitos, o que não é uma boa prática de segurança, no entanto, as máquinas criadas e utilizadas para essa atividade não estão mais disponíveis, tendo sido criadas exclusivamente para a execução da tarefa e sua demonstração.
+
+
+
+
 
 
 
