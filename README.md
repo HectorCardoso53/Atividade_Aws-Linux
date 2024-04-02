@@ -114,7 +114,15 @@ Antes, vamos configurar um grupo de segurança que será utilizada para a rede d
 sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 [DNS do EFS]:/ /mnt/efs.
 
 
+### SSH LINUX: Acessando a instância via SSH;
 
+1.	Abra o terminal linux;
+2.	A estrutura desse comando no linux é "ssh -i ~ /Downloads/HectorSSh.pem ec2-user@54.198.108.39";
+3.	Se essa for a primeira vez que você se conectou a essa instância, o linux exibirá uma caixa de diálogo de alerta de segurança dizendo que qualquer pessoa pode visualizar essa chave.
+4.	No próximo passo terá que ser mudado a regra para somente leitura par que somente o usuário possa vê essa chave, usando o comando chmod 400 e caminho da chave;
+5.	Em seguida, será aberta a tela do terminal da máquina linux da instância.
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e6566c56-1b51-4ad5-b322-a19a09d6e26d)
 
 
 
