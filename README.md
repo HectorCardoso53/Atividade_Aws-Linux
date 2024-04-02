@@ -191,7 +191,7 @@ O script também deve gerar 2 arquivos de saída: um para o serviço online e ou
 Para o agendamento da execução do script vamos utilizar o comando crontab. Normalmente o crontab abre um arquivo com o programa vi de edição de texto. Inciando  a  configuração:
 
 1.	Digite o comando EDITOR=nano crontab -e, para que o nano abra o arquivo crontab;
-2.	Dentro do arquivo digite a linha `#0969DA*/5 * * * * /mnt/efs/Hector/service_status.sh`, no seu caso terá que colocar seu nome.
+2.	Dentro do arquivo digite a linha `_*/5 * * * * /mnt/efs/Hector/service_status.sh_*`, no seu caso terá que colocar seu nome.
 3.	Salve o arquivo e feche o editor.
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/1fcfa23a-f144-495c-a8b9-61fd886e3c30)
