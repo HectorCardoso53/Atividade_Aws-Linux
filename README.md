@@ -1,5 +1,5 @@
 # Atividade_Aws-Linux
-# Execução da atividade
+## Execução da atividade
 # Requisitos no AWS:
 AWS: Geração de chave pública para acesso ao ambiente:
 
