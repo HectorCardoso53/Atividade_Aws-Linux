@@ -54,6 +54,18 @@ AWS: Geração de chave pública para acesso ao ambiente:
 
 10.Revise as configurações e clique em Executar Instância.
 
+# AWS: Gerar 1 Elastic IP e anexar à instância EC2
+
+1.	Na página do serviço EC2, no menu lateral esquerdo, em Rede e Segurança, clique em IPs elásticos;
+2.	Clique em Alocar endereço IP elástico;
+3.	Por padrão, o Grupo de borda de Rede já vem selecionado, assim como o Conjunto de endereços IPv4 públicos da Amazon;
+4.	Clique em Alocar;
+5.	Depois da criação, selecione o IP na lista, clique em Ações no menu superior e depois em Associar endereço IP elástico;
+6.	Selecione a instância EC2 criada anteriormente;
+7.	Depois de selecionar a instância será preciso selecionar o endereço IP privado, que será sugerido pela própria plataforma, bastando confirmar;
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/72a417f3-00a8-4efd-8d43-aaeb9983804f)
+
 
 
 
