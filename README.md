@@ -1,6 +1,6 @@
 # Atividade_Aws-Linux
 ## Execução da atividade
-# Requisitos no AWS:
+### Requisitos no AWS:
 AWS: Geração de chave pública para acesso ao ambiente:
 
 1.No console AWS, vá para o Painel EC2:
