@@ -95,11 +95,11 @@ Antes, vamos configurar um grupo de segurança que será utilizada para a rede d
 7.	Clique em Criar grupo de segurança para finalizar.
 
    
-### AWS :Criando o serviço de Elastic File System (EFS)
+### AWS :Criando diretório para o serviço de Elastic File System (EFS)
 
 1.	No console AWS, navegue até o serviço de EFS;
 2.	No menu lateral esquerdo, clique em Sistemas de arquivos e, na sequência, em Criar sistema de arquivos;
-3.	Adicione um nome para o sistema de arquivos e selecione a opção Personalizar;
+3.	Adicione seu nome para o sistema de arquivos e selecione a opção Personalizar;
 4.	Marque a opção One zone e selecione a mesma zona de disponibilidade em que sua instância foi criada e avance;
 5.	Mantenha as opções pré-definidas, altere apenas o grupo de segurança para o grupo que criamos para o serviço EFS;
 6.	Revise as informações e clique em Criar para terminar;
@@ -134,18 +134,18 @@ Entre com o comando ``_sudo su_`` para ganhar privilégios administrativos.
 1.	Execute o comande de atualização do sistema ``_sudo yum update -y_`` antes de iniciar instalações, para garantir que serão sempre as versões mais atualizadas dos arquivos Linux que rodarão;
 2.	Com o comando ``_sudo yum install -y amazon-efs-utils_`` instale o pacote para suporte ao NFS. É um protocolo que permite compartilhar diretórios e arquivos entre sistemas operacionais em uma rede.;
 3.	Utilize o comando ``_sudo mkdir /mnt/efs_`` para criar um diretório local que servirá como ponto de montagem;
-4.	Agora vamos montar o sistema de arquivos. Para isso, é preciso utilizar o comando que foi copiado anteriormente, ``_sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-09726e305452f8b6f.efs.us-east-1.amazonaws.com:/ /mnt/efs_``
+4.	Agora vamos montar o sistema de arquivos. Para isso, é preciso utilizar o comando que foi copiado anteriormente, _``sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-09726e305452f8b6f.efs.us-east-1.amazonaws.com:/ /mnt/efs``_
 
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/40b9a9dc-58e9-4da7-8a0a-6ae74fbc109f)
 
 ### Linux : Configurando Apache
 
-1.	Atualize os pacotes do sistema com o comando ``_sudo yum update -y_``;
-2.	Instale o Apache com o comando ``_sudo yum install httpd -y_``;
-3.	Inicie o Apache no sistema com o comando ``_sudo systemctl start httpd_`` ;
-4.	Para o Apache iniciar automaticamente, execute o comando `` _sudo systemctl enable httpd_ ``;
-5.	Verifique se o apache está em execução através do comando ``sudo systemctl status httpd``;
+1.	Atualize os pacotes do sistema com o comando _``sudo yum update -y``_;
+2.	Instale o Apache com o comando _``sudo yum install httpd -y``_;
+3.	Inicie o Apache no sistema com o comando _``sudo systemctl start httpd``_ ;
+4.	Para o Apache iniciar automaticamente, execute o comando _``sudo systemctl enable httpd``_;
+5.	Verifique se o apache está em execução através do comando _``sudo systemctl status httpd``_;
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/5e172bde-077b-49a2-ac60-2948ed1d1ef3)
 
