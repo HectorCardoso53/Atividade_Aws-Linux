@@ -163,7 +163,13 @@ Caso necessário, entre com o comando sudo su para ganhar privilégios administr
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/48d70d61-c3d4-48f5-8471-1af8a9f6a935)
 
+### LINUX : Criando um script que valide se o serviço está online ou offline e envie o resultado da validação para o seu diretório no NFS
 
+Para criar um script será necessário utilizar um editor de texto (utilizaremos o nano) e, ao final do nome do arquivo, devemos atribuir a extensão .sh.
+Devemos lembrar que, para essa atividade, o script deve conter data, hora, nome do serviço, status e mensagem personalizada de ONLINE ou OFFLINE.
+O script também deve gerar 2 arquivos de saída: um para o serviço online e outro para o serviço offline.
+1.	Execute o comando nano service_status.sh para criar e abrir o arquivo do script. É importante criar o script dentro do diretório EFS. Aqui vamos salvá-lo no caminho /mnt/efs/Hector;
+2.	Dentro do arquivo, digite o script desejado. O script criado para essa atividade pode ser observado na imagem a seguir:
 
 
 
