@@ -94,6 +94,28 @@ Antes, vamos configurar um grupo de segurança que será utilizada para a rede d
 6.	Quando for escolher o campo Origem, escolha a opção Personalizado e, na caixa ao lado, role a barra até encontrar o grupo de segurança que foi criado para a instância EC2 que vamos acessar. Dessa forma, os dois grupos de segurança estarão conectados, cada um com seu objetivo.
 7.	Clique em Criar grupo de segurança para finalizar.
 
+   
+# AWS :Criando o serviço de Elastic File System (EFS)
+
+1.	No console AWS, navegue até o serviço de EFS;
+2.	No menu lateral esquerdo, clique em Sistemas de arquivos e, na sequência, em Criar sistema de arquivos;
+3.	Adicione um nome para o sistema de arquivos e selecione a opção Personalizar;
+4.	Marque a opção One zone e selecione a mesma zona de disponibilidade em que sua instância foi criada e avance;
+5.	Mantenha as opções pré-definidas, altere apenas o grupo de segurança para o grupo que criamos para o serviço EFS;
+6.	Revise as informações e clique em Criar para terminar;
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/2bf6df64-b101-407f-8218-d2a48953b5fa)
+
+7.	Na lista de sistemas criados, abra o sistema de arquivos recém-feito e clique no botão Anexar para visualizar as opções de montagem (IP ou DNS);
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e7cd893e-0d4c-49a7-a954-032e38bf3b52)
+
+8.	A AWS já nos apresenta comandos definidos de acordo com as opções escolhidas. Aqui, vamos utilizar a montagem via DNS usando o cliente do NFS. Copie-o e salve em um bloco de notas, pois irá precisar dele mais adiante. O comando segue o seguinte modelo:
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 [DNS do EFS]:/ /mnt/efs.
+
+
+
+
 
 
 
