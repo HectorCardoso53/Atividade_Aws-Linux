@@ -77,6 +77,24 @@ AWS: Geração de chave pública para acesso ao ambiente:
 
 6.	Clique em Salvar regras.
 
+# Requisitos no linux:
+
+# AWS : Servidor NFS a partir do Elastic File System (EFS) - Security Group
+
+Para configurarmos um servidor NFS na máquina Linux nos próximos passos, vamos utilizar o serviço EFS da própria AWS.
+Antes, vamos configurar um grupo de segurança que será utilizada para a rede do EFS mais adiante.
+1.	Vá até o Painel EC2 da AWS e clique em Security groups;
+2.	Clique em Criar grupo de segurança;
+3.	Atribua um nome;
+4.	Selecione a mesma VPC em que se encontra a instância. Ela aparecerá listada para você;
+5.	Em Regras de entrada adicione uma regra seguindo o modelo abaixo:
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/adcf7907-7d4c-4136-93d6-f26d73297753)
+
+6.	Quando for escolher o campo Origem, escolha a opção Personalizado e, na caixa ao lado, role a barra até encontrar o grupo de segurança que foi criado para a instância EC2 que vamos acessar. Dessa forma, os dois grupos de segurança estarão conectados, cada um com seu objetivo.
+7.	Clique em Criar grupo de segurança para finalizar.
+
+
 
 
 
