@@ -54,7 +54,7 @@ AWS: Geração de chave pública para acesso ao ambiente:
 
 10.Revise as configurações e clique em Executar Instância.
 
-## AWS: Gerar 1 Elastic IP e anexar à instância EC2
+### AWS: Gerar 1 Elastic IP e anexar à instância EC2
 
 1.	Na página do serviço EC2, no menu lateral esquerdo, em Rede e Segurança, clique em IPs elásticos;
 2.	Clique em Alocar endereço IP elástico;
@@ -66,7 +66,7 @@ AWS: Geração de chave pública para acesso ao ambiente:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/72a417f3-00a8-4efd-8d43-aaeb9983804f)
 
-## AWS : Liberar as portas de comunicação para acesso público
+### AWS : Liberar as portas de comunicação para acesso público
 1.	Na página do serviço EC2, no menu lateral esquerdo, em Rede e Segurança, clique em Security groups;
 2.	Selecione o grupo de segurança que foi criado com a instância EC2;
 3.	Clique em Regras de entrada, na parte inferior, e depois, do lado direito da tela, em Editar regras de entrada;
@@ -79,7 +79,7 @@ AWS: Geração de chave pública para acesso ao ambiente:
 
 # Requisitos no linux:
 
-## AWS : Servidor NFS a partir do Elastic File System (EFS) - Security Group
+### AWS : Servidor NFS a partir do Elastic File System (EFS) - Security Group
 
 Para configurarmos um servidor NFS na máquina Linux nos próximos passos, vamos utilizar o serviço EFS da própria AWS.
 Antes, vamos configurar um grupo de segurança que será utilizada para a rede do EFS mais adiante.
@@ -95,7 +95,7 @@ Antes, vamos configurar um grupo de segurança que será utilizada para a rede d
 7.	Clique em Criar grupo de segurança para finalizar.
 
    
-## AWS :Criando o serviço de Elastic File System (EFS)
+### AWS :Criando o serviço de Elastic File System (EFS)
 
 1.	No console AWS, navegue até o serviço de EFS;
 2.	No menu lateral esquerdo, clique em Sistemas de arquivos e, na sequência, em Criar sistema de arquivos;
