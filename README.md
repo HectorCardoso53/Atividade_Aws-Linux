@@ -211,12 +211,11 @@ Para o agendamento da execução do script vamos utilizar o comando crontab. Nor
 
 E no final encerrar instância
 
-## Referências para a realização da atividade 
+### Referências para a realização da atividade 
 
 Documentação oficial Amazon AWS: https://docs.aws.amazon.com/pt_br/
 Guia Linux Unirio: https://guialinux.uniriotec.br/
-Esta documentação foi formulada por Sérgio Luiz Ferreira de Freitas a partir da atividade realizada e proposta no contexto do Programa de Bolsas e Estágio AWS e DecSecOps na Compass UOL no primeiro semestre de 2024.
-Ao longo da atividade deixamos alguns endereços IP explícitos, o que não é uma boa prática de segurança, no entanto, as máquinas criadas e utilizadas para essa atividade não estão mais disponíveis, tendo sido criadas exclusivamente para a execução da tarefa e sua demonstração.
+Esta documentação foi elaborada por Hector de Araújo Cardoso com base na atividade conduzida e proposta durante o Programa de Bolsas e Estágio AWS e DecSecOps na Compass UOL. As máquinas empregadas neste projeto não estão mais acessíveis, pois foram provisionadas especificamente para a realização da tarefa e sua apresentação.
 
 
 
