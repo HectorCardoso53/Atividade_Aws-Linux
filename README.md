@@ -25,7 +25,7 @@
 
 2.Na próxima tela, no lado superior direito, clique em Executar instância;
 
-3.Agora é possível criar um nome para a instância e criar tags. Nome: PB UFOPA, CostCenter: C092000024 e Project: PB UFOPA, de acordo com as recomendações dos professores.
+3.Agora é possível criar um nome para a instância e criar tags. _``Nome: PB UFOPA``_, _``CostCenter: C092000024``_ e _``Project: PB UFOPA``_, de acordo com as recomendações dos professores.
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/740bd73e-62d4-45c7-9afc-416d3b1d53c3)
 
