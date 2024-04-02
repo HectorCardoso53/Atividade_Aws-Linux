@@ -209,7 +209,7 @@ Para o agendamento da execução do script vamos utilizar o comando crontab. Nor
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/45a1528e-5738-4673-8fc0-c1d426d6496e)
 
-E no final encerrar instância
+E no final encerramento da instância.
 
 ### Referências para a realização da atividade 
 
@@ -217,7 +217,7 @@ Documentação oficial Amazon AWS: https://docs.aws.amazon.com/pt_br/
 
 Guia Linux Unirio: https://guialinux.uniriotec.br/
 
-Esta documentação foi elaborada por Hector de Araújo Cardoso com base na atividade conduzida e proposta durante o Programa de Bolsas e Estágio AWS e DecSecOps na Compass UOL. As máquinas empregadas neste projeto não estão mais acessíveis, pois foram provisionadas especificamente para a realização da tarefa e sua apresentação.
+
 
 
 
