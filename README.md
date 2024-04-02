@@ -19,7 +19,7 @@ AWS: Geração de chave pública para acesso ao ambiente:
 
 7.Salve em lugar seguro (no meu caso salvei em na pasta Downloads) e pronto, o par de chave estará disponível e listado no menu.
 
-## AWS: Criar 1 instância EC2 com o sistema operacional Amazon Linux 2 (Famíliat3.small, 16 GB SSD):
+### AWS: Criar 1 instância EC2 com o sistema operacional Amazon Linux 2 (Famíliat3.small, 16 GB SSD):
 
 1.No Painel EC2 no console AWS, clique em Instâncias no menu ao lado esquerdo da tela;
 
