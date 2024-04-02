@@ -111,15 +111,15 @@ Antes, vamos configurar um grupo de segurança que será utilizada para a rede d
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e7cd893e-0d4c-49a7-a954-032e38bf3b52)
 
 8.	A AWS já nos apresenta comandos definidos de acordo com as opções escolhidas. Aqui, vamos utilizar a montagem via DNS usando o cliente do NFS. Copie-o e salve em um bloco de notas, pois irá precisar dele mais adiante. O comando segue o seguinte modelo:
-sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 [DNS do EFS]:/ /mnt/efs.
+``_sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 [DNS do EFS]:/ /mnt/efs._``
 
 
 ### SSH LINUX: Acessando a instância via SSH;
 
 1.	Abra o terminal linux;
-2.	A estrutura para acessar via ssh no linux é "ssh -i ~ /Downloads/HectorSSh.pem ec2-user@54.198.108.39";
+2.	A estrutura para acessar via ssh no linux é ``_"ssh -i ~ /Downloads/HectorSSh.pem ec2-user@54.198.108.39"_``;
 3.	Se essa for a primeira vez que você se conectou a essa instância, o linux exibirá uma caixa de diálogo de alerta de segurança dizendo que qualquer pessoa pode visualizar essa chave.
-4.	No próximo passo terá que ser mudado a regra para somente leitura par que somente o usuário possa vê essa chave, usando o comando chmod 400 e caminho da chave;
+4.	No próximo passo terá que ser mudado a regra para somente leitura par que somente o usuário possa vê essa chave, usando ``_o comando chmod 400 e caminho da chave_``;
 5.	Em seguida, será aberta a tela do terminal da máquina linux da instância.
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e6566c56-1b51-4ad5-b322-a19a09d6e26d)
@@ -129,23 +129,23 @@ sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,ret
 
 A partir de agora nossas ações serão feitas no terminal Linux da instância EC2 .
 
-Caso necessário, entre com o comando sudo su para ganhar privilégios administrativos.
+Entre com o comando ``_sudo su_`` para ganhar privilégios administrativos.
 
-1.	Execute o comande de atualização do sistema sudo yum update -y antes de iniciar instalações, para garantir que serão sempre as versões mais atualizadas dos arquivos Linux que rodarão;
-2.	Com o comando sudo yum install -y amazon-efs-utils instale o pacote para suporte ao NFS. É um protocolo que permite compartilhar diretórios e arquivos entre sistemas operacionais em uma rede.;
-3.	Utilize o comando sudo mkdir /mnt/efs para criar um diretório local que servirá como ponto de montagem;
-4.	Agora vamos montar o sistema de arquivos. Para isso, é preciso utilizar o comando que foi copiado anteriormente, sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-09726e305452f8b6f.efs.us-east-1.amazonaws.com:/ /mnt/efs
+1.	Execute o comande de atualização do sistema ``_sudo yum update -y_`` antes de iniciar instalações, para garantir que serão sempre as versões mais atualizadas dos arquivos Linux que rodarão;
+2.	Com o comando ``_sudo yum install -y amazon-efs-utils_`` instale o pacote para suporte ao NFS. É um protocolo que permite compartilhar diretórios e arquivos entre sistemas operacionais em uma rede.;
+3.	Utilize o comando ``_sudo mkdir /mnt/efs_`` para criar um diretório local que servirá como ponto de montagem;
+4.	Agora vamos montar o sistema de arquivos. Para isso, é preciso utilizar o comando que foi copiado anteriormente, ``_sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-09726e305452f8b6f.efs.us-east-1.amazonaws.com:/ /mnt/efs_``
 
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/40b9a9dc-58e9-4da7-8a0a-6ae74fbc109f)
 
 ### Linux : Configurando Apache
 
-1.	Atualize os pacotes do sistema com o comando sudo yum update -y;
-2.	Instale o Apache com o comando sudo yum install httpd -y;
-3.	Inicie o Apache no sistema com o comando sudo systemctl start httpd ;
-4.	Para o Apache iniciar automaticamente, execute o comando sudo systemctl enable httpd;
-5.	Verifique se o apache está em execução através do comando sudo systemctl status httpd;
+1.	Atualize os pacotes do sistema com o comando ``_sudo yum update -y_``;
+2.	Instale o Apache com o comando ``_sudo yum install httpd -y_``;
+3.	Inicie o Apache no sistema com o comando ``_sudo systemctl start httpd_`` ;
+4.	Para o Apache iniciar automaticamente, execute o comando `` _sudo systemctl enable httpd_ ``;
+5.	Verifique se o apache está em execução através do comando ``sudo systemctl status httpd``;
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/5e172bde-077b-49a2-ac60-2948ed1d1ef3)
 
@@ -190,22 +190,23 @@ O script também deve gerar 2 arquivos de saída: um para o serviço online e ou
 
 Para o agendamento da execução do script vamos utilizar o comando crontab. Normalmente o crontab abre um arquivo com o programa vi de edição de texto. Inciando  a  configuração:
 
-1.	Digite o comando EDITOR=nano crontab -e, para que o nano abra o arquivo crontab;
+1.	Digite o comando ``_EDITOR=nano crontab -e_``, para que o nano abra o arquivo crontab;
 2.	Dentro do arquivo digite a linha _```/5 * * * * /mnt/efs/Hector/service_status.sh```_, no seu caso terá que colocar seu nome.
 4.	Salve o arquivo e feche o editor.
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/1fcfa23a-f144-495c-a8b9-61fd886e3c30)
 
-4.	Para verificar se a automatização está funcionando, é preciso abrir os arquivos .txt que foram programados para serem criados e guardar as informações da verificação do serviço online e offline. Como a automatização faz com que a verificação programada pelo script ocorra a cada 5 minutos, dê algum tempo para que o arquivo .txt seja atualizado algumas vezes;
+4.	Para verificar se a automatização está funcionando, é preciso abrir os arquivos ``_.txt_`` que foram programados para serem criados e guardar as informações da verificação do serviço _online_ e _offline_. Como a automatização faz com que a verificação programada pelo script ocorra a cada 5 minutos, dê algum tempo para que o arquivo ``_.txt_`` seja atualizado algumas vezes;
+   
 5.	Na imagem abaixo temos a demonstração do arquivo httpd-online.txt exibindo as informações da validação online após o crontab realizar a automatização algumas vezes:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/4eac8d15-a8df-413b-97d3-a4c65f649813)
 
-6.	Para fazermos a confirmação de que o script realiza a verificação do serviço offline é preciso interromper o Apache com o comando sudo systemctl stop httpd. Dessa forma, basta aguardar alguns minutos para que o crontap continue a executar o script a cada 5 minutos e poderemos ver a criação do arquivo httpd-offline.txt, que exibe os momentos em que o status do serviço estava offline, conforme imagem abaixo:
+6.	Para fazermos a confirmação de que o script realiza a verificação do serviço offline é preciso interromper o Apache com o comando ``_sudo systemctl stop httpd_``. Dessa forma, agora é só aguardar a execução do script a cada 5 minutos e poderemos ver a criação do arquivo ``_httpd-offline.txt_``, que exibe os momentos em que o status do serviço estava offline, conforme imagem abaixo:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/1e4e4aad-a898-4798-b7dd-e390908ad433)
 
-7.	Ainda, é possível verificarmos que os arquivos .txt foram criados dentro do diretório indicado no script:
+7.	Ainda, é possível verificarmos que os arquivos _``.txt``_ foram criados dentro do diretório indicado no script:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/45a1528e-5738-4673-8fc0-c1d426d6496e)
 
