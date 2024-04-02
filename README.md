@@ -125,6 +125,23 @@ sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,ret
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e6566c56-1b51-4ad5-b322-a19a09d6e26d)
 
 
+### Linux : Montando o sistema de arquivos do EFS na máquina
+
+A partir de agora nossas ações serão feitas no terminal Linux da instância EC2 .
+
+Caso necessário, entre com o comando sudo su para ganhar privilégios administrativos.
+
+1.	Execute o comande de atualização do sistema sudo yum update -y antes de iniciar instalações, para garantir que serão sempre as versões mais atualizadas dos arquivos Linux que rodarão;
+2.	Com o comando sudo yum install -y amazon-efs-utils instale o pacote para suporte ao NFS. É um protocolo que permite compartilhar diretórios e arquivos entre sistemas operacionais em uma rede.;
+3.	Utilize o comando sudo mkdir /mnt/efs para criar um diretório local que servirá como ponto de montagem;
+4.	Agora vamos montar o sistema de arquivos. Para isso, é preciso utilizar o comando que foi copiado anteriormente, sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-09726e305452f8b6f.efs.us-east-1.amazonaws.com:/ /mnt/efs
+
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/40b9a9dc-58e9-4da7-8a0a-6ae74fbc109f)
+
+
+
+
 
 
 
