@@ -119,7 +119,7 @@ Antes, vamos configurar um grupo de segurança que será utilizada para a rede d
 1.	Abra o terminal linux;
 2.	A estrutura para acessar via ssh no linux é _``"ssh -i ~ /Downloads/HectorSSH.pem ec2-user@54.198.108.39"``_;
 3.	Se essa for a primeira vez que você se conectou a essa instância, o linux exibirá uma caixa de diálogo de alerta de segurança dizendo que qualquer pessoa pode visualizar essa chave.
-4.	No próximo passo terá que ser mudado a regra para somente leitura par que somente o usuário possa vê essa chave, usando ``_o comando chmod 400 e caminho da chave_``;
+4.	No próximo passo terá que ser mudado a regra para somente leitura par que somente o usuário possa vê essa chave, usando _``o comando chmod 400 e caminho da chave``_;
 5.	Em seguida, será aberta a tela do terminal da máquina linux da instância.
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e6566c56-1b51-4ad5-b322-a19a09d6e26d)
