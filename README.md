@@ -154,7 +154,7 @@ Entre com o comando ``_sudo su_`` para ganhar privilégios administrativos.
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/0edf3448-ea26-45c3-838d-5ad19878e0c5)
 
 
-7.	Para criar/editar esse arquivo, digite o comando sudo nano index.html. O arquivo HTML que você digitar nesse documento é o que será mostrado na página acessada pelo IP público. Veja a seguir um exemplo de documento HTML para o serviço:
+7.	Para criar/editar esse arquivo, digite o comando _``sudo nano index.html``_. O arquivo HTML que você digitar nesse documento é o que será mostrado na página acessada pelo IP público. Veja a seguir um exemplo de documento HTML para o serviço:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/5ef7035c-cf0a-4815-bde4-27681980b47b)
 
@@ -168,19 +168,19 @@ Entre com o comando ``_sudo su_`` para ganhar privilégios administrativos.
 Para criar um script será necessário utilizar um editor de texto (utilizaremos o nano) e, ao final do nome do arquivo, devemos atribuir a extensão .sh.
 Devemos lembrar que, para essa atividade, o script deve conter data, hora, nome do serviço, status e mensagem personalizada de ONLINE ou OFFLINE.
 O script também deve gerar 2 arquivos de saída: um para o serviço online e outro para o serviço offline.
-1.	Execute o comando nano service_status.sh para criar e abrir o arquivo do script. É importante criar o script dentro do diretório EFS. Aqui vamos salvá-lo no caminho /mnt/efs/Hector;
+1.	Execute o comando nano service_status.sh para criar e abrir o arquivo do script. É importante criar o script dentro do diretório EFS. Aqui vamos salvá-lo no caminho _``/mnt/efs/Hector``_;
 2.	Dentro do arquivo, digite o script desejado. O script criado para essa atividade pode ser observado na imagem a seguir:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/b97416c0-6e00-40a7-96c0-63c4e4f963e6)
 
-3.	Note que, no exemplo acima, dentro do esquema "if/else", já indicamos que a operação deve criar, no caminho do diretório indicado, e enviar dois arquivos em formato .txt com os resultados da verificação. Sendo um arquivo para o resultado online e outro para o resultado offline;
+3.	Note que, no exemplo acima, dentro do esquema "if/else", já indicamos que a operação deve criar, no caminho do diretório indicado, e enviar dois arquivos em formato _``.txt``_ com os resultados da verificação. Sendo um arquivo para o resultado online e outro para o resultado offline;
 4.	Salve o arquivo do script;
-5.	Para tornar o arquivo do script executável digite o comando  nesse caso, sudo chmod +x service_status.sh;
-6.	Estando no diretório onde o script foi criado e ativado, execute o comando ./service_status.sh para executá-lo. Caso esteja funcionando corretamente e o serviço esteja online, o script vai criar o documento .txt que guarda as informações da validação online;
+5.	Para tornar o arquivo do script executável digite o comando _``sudo chmod +x service_status.sh``_;
+6.	Estando no diretório onde o script foi criado e ativado, execute o comando _``./service_status.sh``_ para executá-lo. Caso esteja funcionando corretamente e o serviço esteja online, o script vai criar o documento _``.txt``_ que guarda as informações da validação online;
    
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e74d5954-22da-435a-b616-1e792183fbcb)
 
-7.	Esse documento pode ser lido com o comando cat + nome do documento: cat httpd-online.txt. É possível verificar o funcionamento do script na imagem abaixo:
+7.	Esse documento pode ser lido com o comando _``cat httpd-online.txt``_. É possível verificar o funcionamento do script na imagem abaixo:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/8e567e59-25c9-4cb5-a388-186e9178cab8)
 
@@ -190,19 +190,19 @@ O script também deve gerar 2 arquivos de saída: um para o serviço online e ou
 
 Para o agendamento da execução do script vamos utilizar o comando crontab. Normalmente o crontab abre um arquivo com o programa vi de edição de texto. Inciando  a  configuração:
 
-1.	Digite o comando ``_EDITOR=nano crontab -e_``, para que o nano abra o arquivo crontab;
+1.	Digite o comando _``EDITOR=nano crontab -e``_, para que o nano abra o arquivo crontab;
 2.	Dentro do arquivo digite a linha _```/5 * * * * /mnt/efs/Hector/service_status.sh```_, no seu caso terá que colocar seu nome.
 4.	Salve o arquivo e feche o editor.
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/1fcfa23a-f144-495c-a8b9-61fd886e3c30)
 
-4.	Para verificar se a automatização está funcionando, é preciso abrir os arquivos ``_.txt_`` que foram programados para serem criados e guardar as informações da verificação do serviço _online_ e _offline_. Como a automatização faz com que a verificação programada pelo script ocorra a cada 5 minutos, dê algum tempo para que o arquivo ``_.txt_`` seja atualizado algumas vezes;
+4.	Para verificar se a automatização está funcionando, é preciso abrir os arquivos _``.txt``_ que foram programados para serem criados e guardar as informações da verificação do serviço _online_ e _offline_. Como a automatização faz com que a verificação programada pelo script ocorra a cada 5 minutos, dê algum tempo para que o arquivo _``.txt``_ seja atualizado algumas vezes;
    
 5.	Na imagem abaixo temos a demonstração do arquivo httpd-online.txt exibindo as informações da validação online após o crontab realizar a automatização algumas vezes:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/4eac8d15-a8df-413b-97d3-a4c65f649813)
 
-6.	Para fazermos a confirmação de que o script realiza a verificação do serviço offline é preciso interromper o Apache com o comando ``_sudo systemctl stop httpd_``. Dessa forma, agora é só aguardar a execução do script a cada 5 minutos e poderemos ver a criação do arquivo ``_httpd-offline.txt_``, que exibe os momentos em que o status do serviço estava offline, conforme imagem abaixo:
+6.	Para fazermos a confirmação de que o script realiza a verificação do serviço offline é preciso interromper o Apache com o comando _``sudo systemctl stop httpd``_. Dessa forma, agora é só aguardar a execução do script a cada 5 minutos e poderemos ver a criação do arquivo _``httpd-offline.txt``_, que exibe os momentos em que o status do serviço estava offline, conforme imagem abaixo:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/1e4e4aad-a898-4798-b7dd-e390908ad433)
 
