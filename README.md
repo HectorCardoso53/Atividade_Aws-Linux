@@ -214,7 +214,9 @@ E no final encerrar instância
 ### Referências para a realização da atividade 
 
 Documentação oficial Amazon AWS: https://docs.aws.amazon.com/pt_br/
+
 Guia Linux Unirio: https://guialinux.uniriotec.br/
+
 Esta documentação foi elaborada por Hector de Araújo Cardoso com base na atividade conduzida e proposta durante o Programa de Bolsas e Estágio AWS e DecSecOps na Compass UOL. As máquinas empregadas neste projeto não estão mais acessíveis, pois foram provisionadas especificamente para a realização da tarefa e sua apresentação.
 
 
