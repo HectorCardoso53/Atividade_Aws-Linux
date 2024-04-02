@@ -117,7 +117,7 @@ sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,ret
 ### SSH LINUX: Acessando a instância via SSH;
 
 1.	Abra o terminal linux;
-2.	A estrutura desse comando no linux é "ssh -i ~ /Downloads/HectorSSh.pem ec2-user@54.198.108.39";
+2.	A estrutura para acessar via ssh no linux é "ssh -i ~ /Downloads/HectorSSh.pem ec2-user@54.198.108.39";
 3.	Se essa for a primeira vez que você se conectou a essa instância, o linux exibirá uma caixa de diálogo de alerta de segurança dizendo que qualquer pessoa pode visualizar essa chave.
 4.	No próximo passo terá que ser mudado a regra para somente leitura par que somente o usuário possa vê essa chave, usando o comando chmod 400 e caminho da chave;
 5.	Em seguida, será aberta a tela do terminal da máquina linux da instância.
@@ -138,6 +138,34 @@ Caso necessário, entre com o comando sudo su para ganhar privilégios administr
 
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/40b9a9dc-58e9-4da7-8a0a-6ae74fbc109f)
+
+### Linux : Configurando Apache
+
+1.	Atualize os pacotes do sistema com o comando sudo yum update -y;
+2.	Instale o Apache com o comando sudo yum install httpd -y;
+3.	Inicie o Apache no sistema com o comando sudo systemctl start httpd ;
+4.	Para o Apache iniciar automaticamente, execute o comando sudo systemctl enable httpd;
+5.	Verifique se o apache está em execução através do comando sudo systemctl status httpd;
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/5e172bde-077b-49a2-ac60-2948ed1d1ef3)
+
+6.	O Apache já vem com uma página inicial padrão que pode ser acessada através da digitação do IP público da ec2 na barra de endereço de um navegador. Mas também é possível editar essa página HTML para que exiba o que você quiser. Isso é feito a partir de um arquivo index que pode ser criado dentro do diretório do Apache;
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/0edf3448-ea26-45c3-838d-5ad19878e0c5)
+
+
+7.	Para criar/editar esse arquivo, digite o comando sudo nano index.html. O arquivo HTML que você digitar nesse documento é o que será mostrado na página acessada pelo IP público. Veja a seguir um exemplo de documento HTML para o serviço:
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/5ef7035c-cf0a-4815-bde4-27681980b47b)
+
+8.	Para salvar o documento no editor nano, aperte ctrl+x, depois y e confirme apertando enter;
+9.	Para acessar a página e ver se funcionou, basta colar o IP público da instância (informação disponível nos detalhes da instância na AWS) na barra de endereço de um navegador.
+
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/48d70d61-c3d4-48f5-8471-1af8a9f6a935)
+
+
+
+
 
 
 
