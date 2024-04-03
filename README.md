@@ -129,11 +129,11 @@ Antes, vamos configurar um grupo de segurança que será utilizada para a rede d
 
 A partir de agora nossas ações serão feitas no terminal Linux da instância EC2 .
 
-Entre com o comando ``_sudo su_`` para ganhar privilégios administrativos.
+Entre com o comando _``sudo su``_ para ganhar privilégios administrativos.
 
-1.	Execute o comande de atualização do sistema ``_sudo yum update -y_`` antes de iniciar instalações, para garantir que serão sempre as versões mais atualizadas dos arquivos Linux que rodarão;
-2.	Com o comando ``_sudo yum install -y amazon-efs-utils_`` instale o pacote para suporte ao NFS. É um protocolo que permite compartilhar diretórios e arquivos entre sistemas operacionais em uma rede.;
-3.	Utilize o comando ``_sudo mkdir /mnt/efs_`` para criar um diretório local que servirá como ponto de montagem;
+1.	Execute o comande de atualização do sistema _``sudo yum update -y``_ antes de iniciar instalações, para garantir que serão sempre as versões mais atualizadas dos arquivos Linux que rodarão;
+2.	Com o comando _``sudo yum install -y amazon-efs-utils``_ instale o pacote para suporte ao NFS. É um protocolo que permite compartilhar diretórios e arquivos entre sistemas operacionais em uma rede.;
+3.	Utilize o comando _``sudo mkdir /mnt/efs``_ para criar um diretório local que servirá como ponto de montagem;
 4.	Agora vamos montar o sistema de arquivos. Para isso, é preciso utilizar o comando que foi copiado anteriormente, _``sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-09726e305452f8b6f.efs.us-east-1.amazonaws.com:/ /mnt/efs``_
 
 
