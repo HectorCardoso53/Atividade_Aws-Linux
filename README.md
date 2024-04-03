@@ -219,6 +219,9 @@ Documentação oficial Amazon AWS: https://docs.aws.amazon.com/pt_br/
 
 Guia Linux Unirio: https://guialinux.uniriotec.br/
 
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/91453de6-3907-4d4a-a9a8-0196e43372be)
+
+
 
 
 
