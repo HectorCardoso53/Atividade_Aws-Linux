@@ -118,7 +118,7 @@ Antes, vamos configurar um grupo de segurança que será utilizada para a rede d
 ### SSH LINUX: Acessando a instância via SSH;
 
 1.	Abra o terminal linux;
-2.	A estrutura para acessar via ssh no linux é _``"ssh -i ~ /Downloads/HectorSSH.pem ec2-user@54.198.108.39"``_;
+2.	A estrutura para acessar via ssh no linux é _``"ssh -i ~ /Downloads/HectorSSH.pem ec2-user@3.208.219.49"``_;
 3.	Se essa for a primeira vez que você se conectou a essa instância, o linux exibirá uma caixa de diálogo de alerta de segurança dizendo que qualquer pessoa pode visualizar essa chave.
 4.	No próximo passo terá que ser mudado a regra para somente leitura par que somente o usuário possa vê essa chave, usando _``o comando chmod 400 e caminho da chave``_;
 5.	Em seguida, será aberta a tela do terminal da máquina linux da instância.
