@@ -169,7 +169,7 @@ Entre com o comando _``sudo su``_ para ganhar privilégios administrativos.
 Para criar um script será necessário utilizar um editor de texto (utilizaremos o nano) e, ao final do nome do arquivo, devemos atribuir a extensão .sh.
 Devemos lembrar que, para essa atividade, o script deve conter data, hora, nome do serviço, status e mensagem personalizada de ONLINE ou OFFLINE.
 O script também deve gerar 2 arquivos de saída: um para o serviço online e outro para o serviço offline.
-1.	Execute o comando nano service_status.sh para criar e abrir o arquivo do script. É importante criar o script dentro do diretório EFS. Aqui vamos salvá-lo no caminho _``/mnt/efs/Hector``_;
+1.	Execute o comando _`nano service_status.sh`_ para criar e abrir o arquivo do script. É importante criar o script dentro do diretório EFS. Aqui vamos salvá-lo no caminho _``/mnt/efs/Hector``_;
 2.	Dentro do arquivo, digite o script desejado. O script criado para essa atividade pode ser observado na imagem a seguir:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/b97416c0-6e00-40a7-96c0-63c4e4f963e6)
@@ -192,7 +192,7 @@ O script também deve gerar 2 arquivos de saída: um para o serviço online e ou
 Para o agendamento da execução do script vamos utilizar o comando crontab. Normalmente o crontab abre um arquivo com o programa vi de edição de texto. Inciando  a  configuração:
 
 1.	Digite o comando _``EDITOR=nano crontab -e``_, para que o nano abra o arquivo crontab;
-2.	Dentro do arquivo digite a linha _```/5 * * * * /mnt/efs/Hector/service_status.sh```_, no seu caso terá que colocar seu nome.
+2.	Dentro do arquivo digite a linha _```*/5 * * * * /mnt/efs/Hector/service_status.sh```_, no seu caso terá que colocar seu nome.
 4.	Salve o arquivo e feche o editor.
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/1fcfa23a-f144-495c-a8b9-61fd886e3c30)
