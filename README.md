@@ -1,4 +1,4 @@
-<h1 align="center"> Atividade linux</h1>
+<h1 align="center"> Atividade linux</h1><br>
 
 ## Execução da atividade
 ### Requisitos no AWS:
