@@ -110,7 +110,8 @@ Antes, vamos configurar um grupo de segurança que será utilizada para a rede d
 
 7.	Na lista de sistemas criados, abra o sistema de arquivos recém-feito e clique no botão Anexar para visualizar as opções de montagem (IP ou DNS);
 
-![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e7cd893e-0d4c-49a7-a954-032e38bf3b52)
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/7443e4bc-25b8-4452-9c56-311e2fdf4733)
+
 
 8.	A AWS já nos apresenta comandos definidos de acordo com as opções escolhidas. Aqui, vamos utilizar a montagem via DNS usando o cliente do NFS. Copie-o e salve em um bloco de notas, pois irá precisar dele mais adiante. O comando segue o seguinte modelo:
 ``_sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 [DNS do EFS]:/ /mnt/efs._``
