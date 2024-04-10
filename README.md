@@ -105,7 +105,7 @@ Antes, vamos configurar um grupo de segurança que será utilizada para a rede d
 5.	Mantenha as opções pré-definidas, altere apenas o grupo de segurança para o grupo que criamos para o serviço EFS;
 6.	Revise as informações e clique em Criar para terminar;
 
-![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/2bf6df64-b101-407f-8218-d2a48953b5fa)
+https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/2bf6df64-b101-407f-8218-d2a48953b5fa
 
 7.	Na lista de sistemas criados, abra o sistema de arquivos recém-feito e clique no botão Anexar para visualizar as opções de montagem (IP ou DNS);
 
