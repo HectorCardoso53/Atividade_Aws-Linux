@@ -1,4 +1,4 @@
-#!/bin/bash  * interpretador de comandos a ser utilizado é o Bash.
+#interpretador de comandos a ser utilizado é o !/bin/bash.
 
 service_name="Apache" # contém o nome do serviço, neste caso, Apache.
 current_date=$(date +"%Y-%m-%d") # Comando para obter a data atual
