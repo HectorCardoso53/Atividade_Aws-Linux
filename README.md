@@ -174,7 +174,8 @@ O script também deve gerar 2 arquivos de saída: um para o serviço online e ou
 1.	Execute o comando _`nano service_status.sh`_ para criar e abrir o arquivo do script. É importante criar o script dentro do diretório EFS. Aqui vamos salvá-lo no caminho _``/mnt/efs/Hector``_;
 2.	Dentro do arquivo, digite o script desejado. O script criado para essa atividade pode ser observado na imagem a seguir:
 
-![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/b97416c0-6e00-40a7-96c0-63c4e4f963e6)
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/1ec25431-d046-4287-b467-e1791fa40261)
+
 
 3.	Note que, no exemplo acima, dentro do esquema "if/else", já indicamos que a operação deve criar, no caminho do diretório indicado, e enviar dois arquivos em formato _``.txt``_ com os resultados da verificação. Sendo um arquivo para o resultado online e outro para o resultado offline;
 4.	Salve o arquivo do script;
