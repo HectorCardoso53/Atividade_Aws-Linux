@@ -186,7 +186,8 @@ O script também deve gerar 2 arquivos de saída: um para o serviço online e ou
 
 7.	Esse documento pode ser lido com o comando _``cat httpd-online.txt``_. É possível verificar o funcionamento do script na imagem abaixo:
 
-![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/8e567e59-25c9-4cb5-a388-186e9178cab8)
+![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e06907d2-f78f-4de2-ba46-f1c88cf859e8)
+
 
 8.	Note que o documento informa a data e a hora em que a verificação foi feita, assim como o nome do serviço verificado e uma mensagem indicando que o mesmo está online.
 
