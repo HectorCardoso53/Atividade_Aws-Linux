@@ -134,9 +134,9 @@ A partir de agora nossas ações serão feitas no terminal Linux da instância E
 
 Entre com o comando _``sudo su``_ para ganhar privilégios administrativos.
 
-1.	Execute o comande de atualização do sistema _``sudo yum update -y``_ antes de iniciar instalações, para garantir que serão sempre as versões mais atualizadas dos arquivos Linux que rodarão;
-2.	Com o comando _``sudo yum install -y amazon-efs-utils``_ instale o pacote para suporte ao NFS. É um protocolo que permite compartilhar diretórios e arquivos entre sistemas operacionais em uma rede.;
-3.	Utilize o comando _``sudo mkdir /mnt/efs``_ para criar um diretório local que servirá como ponto de montagem;
+1.	Execute o comande de atualização do sistema _``yum update -y``_ antes de iniciar instalações, para garantir que serão sempre as versões mais atualizadas dos arquivos Linux que rodarão;
+2.	Com o comando _``yum install -y amazon-efs-utils``_ instale o pacote para suporte ao NFS. É um protocolo que permite compartilhar diretórios e arquivos entre sistemas operacionais em uma rede.;
+3.	Utilize o comando _``mkdir /mnt/efs``_ para criar um diretório local que servirá como ponto de montagem;
 4.	Agora vamos montar o sistema de arquivos. Para isso, é preciso utilizar o comando que foi copiado anteriormente, _``sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-09726e305452f8b6f.efs.us-east-1.amazonaws.com:/ /mnt/efs``_
 
 
@@ -144,11 +144,11 @@ Entre com o comando _``sudo su``_ para ganhar privilégios administrativos.
 
 ### Linux : Configurando Apache
 
-1.	Atualize os pacotes do sistema com o comando _``sudo yum update -y``_;
-2.	Instale o Apache com o comando _``sudo yum install httpd -y``_;
-3.	Inicie o Apache no sistema com o comando _``sudo systemctl start httpd``_ ;
-4.	Para o Apache iniciar automaticamente, execute o comando _``sudo systemctl enable httpd``_;
-5.	Verifique se o apache está em execução através do comando _``sudo systemctl status httpd``_;
+1.	Atualize os pacotes do sistema com o comando _``yum update -y``_;
+2.	Instale o Apache com o comando _``yum install httpd -y``_;
+3.	Inicie o Apache no sistema com o comando _``systemctl start httpd``_ ;
+4.	Para o Apache iniciar automaticamente, execute o comando _``systemctl enable httpd``_;
+5.	Verifique se o apache está em execução através do comando _``systemctl status httpd``_;
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/5e172bde-077b-49a2-ac60-2948ed1d1ef3)
 
@@ -157,7 +157,7 @@ Entre com o comando _``sudo su``_ para ganhar privilégios administrativos.
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/0edf3448-ea26-45c3-838d-5ad19878e0c5)
 
 
-7.	Para criar/editar esse arquivo, digite o comando _``sudo nano index.html``_. O arquivo HTML que você digitar nesse documento é o que será mostrado na página acessada pelo IP público. Veja a seguir um exemplo de documento HTML para o serviço:
+7.	Para criar/editar esse arquivo, digite o comando _``nano index.html``_. O arquivo HTML que você digitar nesse documento é o que será mostrado na página acessada pelo IP público. Veja a seguir um exemplo de documento HTML para o serviço:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/5ef7035c-cf0a-4815-bde4-27681980b47b)
 
@@ -179,7 +179,7 @@ O script também deve gerar 2 arquivos de saída: um para o serviço online e ou
 
 3.	Note que, no exemplo acima, dentro do esquema "if/else", já indicamos que a operação deve criar, no caminho do diretório indicado, e enviar dois arquivos em formato _``.txt``_ com os resultados da verificação. Sendo um arquivo para o resultado online e outro para o resultado offline;
 4.	Salve o arquivo do script;
-5.	Para tornar o arquivo do script executável digite o comando _``sudo chmod +x service_status.sh``_;
+5.	Para tornar o arquivo do script executável digite o comando _``chmod +x service_status.sh``_;
 6.	Estando no diretório onde o script foi criado e ativado, execute o comando _``./service_status.sh``_ para executá-lo. Caso esteja funcionando corretamente e o serviço esteja online, o script vai criar o documento _``.txt``_ que guarda as informações da validação online;
    
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/e74d5954-22da-435a-b616-1e792183fbcb)
@@ -207,7 +207,7 @@ Para o agendamento da execução do script vamos utilizar o comando crontab. Nor
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/4eac8d15-a8df-413b-97d3-a4c65f649813)
 
-6.	Para fazermos a confirmação de que o script realiza a verificação do serviço offline é preciso interromper o Apache com o comando _``sudo systemctl stop httpd``_. Dessa forma, agora é só aguardar a execução do script a cada 5 minutos e poderemos ver a criação do arquivo _``httpd-offline.txt``_, que exibe os momentos em que o status do serviço estava offline, conforme imagem abaixo:
+6.	Para fazermos a confirmação de que o script realiza a verificação do serviço offline é preciso interromper o Apache com o comando _`` systemctl stop httpd``_. Dessa forma, agora é só aguardar a execução do script a cada 5 minutos e poderemos ver a criação do arquivo _``httpd-offline.txt``_, que exibe os momentos em que o status do serviço estava offline, conforme imagem abaixo:
 
 ![image](https://github.com/HectorCardoso53/Atividade_Aws-Linux/assets/118605794/1e4e4aad-a898-4798-b7dd-e390908ad433)
 
